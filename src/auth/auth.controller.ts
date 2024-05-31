@@ -5,14 +5,12 @@ import { Request } from "express";
 @Controller('auth')
 export class AuthController {
 
-    // api/auth/google/login
     @Get('google/login')
     @UseGuards(GoogleAuthGuard)
     handleLogin() {
         return { msg: 'Google Authentication' }
     }
 
-    // api/auth/google/redirect
     @Get('google/redirect')
     @UseGuards(GoogleAuthGuard)
     handleRedirect() {
