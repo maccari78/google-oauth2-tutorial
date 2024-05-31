@@ -4,7 +4,7 @@ import { Request } from "express";
 
 @Controller('auth')
 export class AuthController {
-    
+
     // api/auth/google/login
     @Get('google/login')
     @UseGuards(GoogleAuthGuard)
@@ -15,17 +15,17 @@ export class AuthController {
     // api/auth/google/redirect
     @Get('google/redirect')
     @UseGuards(GoogleAuthGuard)
-    handleRedirect(){
+    handleRedirect() {
         return { msg: 'OK' }
     }
 
     @Get('status')
-    user(@Req() request:Request){
+    user(@Req() request: Request) {
         console.log(request.user);
-        if (request.user){
-            return{msg:'Authenticated'}
-        }else{
-            return{msg:'Not Authenticated'}
+        if (request.user) {
+            return { msg: 'Authenticated' }
+        } else {
+            return { msg: 'Not Authenticated' }
         }
     }
 

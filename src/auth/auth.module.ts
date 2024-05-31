@@ -12,7 +12,7 @@ import { SessionSerializer } from './utils/Serializer';
     ],
     controllers: [AuthController],
     providers: [
-        GoogleStrategy, 
+        GoogleStrategy,
         SessionSerializer,
         {
             provide: 'AUTH_SERVICE',
